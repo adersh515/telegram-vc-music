@@ -13,13 +13,17 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
+# Basic python deps
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install pytgcalls + tgcalls from GitHub (MATCHING v2.0.0)
+# tgcalls (v2.0.0 tag exists)
 RUN pip install --no-cache-dir \
-    git+https://github.com/pytgcalls/tgcalls.git@v2.0.0 \
-    git+https://github.com/pytgcalls/pytgcalls.git@v2.0.0
+    git+https://github.com/pytgcalls/tgcalls.git@v2.0.0
+
+# pytgcalls (NO v2.0.0 tag → use default branch)
+RUN pip install --no-cache-dir \
+    git+https://github.com/pytgcalls/pytgcalls.git
 
 COPY . .
 
