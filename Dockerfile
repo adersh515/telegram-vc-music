@@ -16,8 +16,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Build tgcalls from source (PINNED VERSION – VERY IMPORTANT)
-RUN pip install --no-cache-dir git+https://github.com/pytgcalls/tgcalls.git@v2.0.0
+# Install pytgcalls + tgcalls from GitHub (MATCHING v2.0.0)
+RUN pip install --no-cache-dir \
+    git+https://github.com/pytgcalls/tgcalls.git@v2.0.0 \
+    git+https://github.com/pytgcalls/pytgcalls.git@v2.0.0
 
 COPY . .
 
