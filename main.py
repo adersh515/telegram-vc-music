@@ -7,8 +7,8 @@ from pytgcalls import PyTgCalls
 from pytgcalls.types.input_stream import AudioPiped
 
 # ================== CONFIG ==================
-API_ID = 21459699         # <-- your api_id
-API_HASH = "96169ccf545501214a7da9885f29750e"
+API_ID = 123456         # <-- your api_id
+API_HASH = "API_HASH_HERE"
 SESSION_NAME = "user"    # session file name
 # ============================================
 
